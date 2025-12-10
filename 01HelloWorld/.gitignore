@@ -1,0 +1,12 @@
+# Build directory
+/build/
+/build-*/
+
+# Visual Studio Code settings
+# /.vscode/
+
+*.o
+*.a
+*.so
+*.dll
+*.exe

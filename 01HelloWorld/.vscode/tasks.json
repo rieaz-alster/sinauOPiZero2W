@@ -1,0 +1,50 @@
+{
+    "tasks": [
+        {
+            "label": "build-x64",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B", "${workspaceFolder}/build-x64",
+                "-S", "${workspaceFolder}",
+                "-DCMAKE_CXX_COMPILER=g++"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "compile-x64",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "${workspaceFolder}/build-x64",
+                "--config", "Debug"],
+            "dependsOn": ["build-x64"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "build-aarch64",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B", "${workspaceFolder}/build-aarch64",
+                "-S", "${workspaceFolder}",
+                "-DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++"
+            ], 
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "compile-aarch64",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "${workspaceFolder}/build-aarch64",
+                "--config", "Debug"],
+            "dependsOn": ["build-aarch64"],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ],
+    "version": "2.0.0"
+}
