@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create build dir",
+      "type": "shell",
+      "command": "mkdir -p ${workspaceFolder}/build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build (g++)",
+      "type": "shell",
+      "command": "g++ -g ${workspaceFolder}/main.cpp -o ${workspaceFolder}/build/main",
+      "group": {
+        "kind": "build"
+      },
+      "dependsOn": ["Create build dir"],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake -S ${workspaceFolder} -B ${workspaceFolder}/build -DCMAKE_BUILD_TYPE=Debug",
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cmake --build ${workspaceFolder}/build -- -j",
+      "dependsOn": ["CMake: Configure"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: Clean",
+      "type": "shell",
+      "command": "cmake --build ${workspaceFolder}/build --target clean",
+      "problemMatcher": []
+    },
+    {
+        "label": "CMake: Configure (ASAN)",
+        "type": "shell",
+        "command": "cmake -S ${workspaceFolder} -B ${workspaceFolder}/build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS=\"-fsanitize=address -fno-omit-frame-pointer\"",
+        "problemMatcher": []
+    },
+    {
+        "label": "CMake: Build (ASAN)",
+        "type": "shell",
+        "command": "cmake --build ${workspaceFolder}/build -- -j",
+        "dependsOn": ["CMake: Configure (ASAN)"],
+        "group": "build",
+        "problemMatcher": []
+    }
+  ]
+}

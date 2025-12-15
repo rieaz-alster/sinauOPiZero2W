@@ -1,0 +1,1 @@
+/usr/bin/g++ -fsanitize=address -fno-omit-frame-pointer -g CMakeFiles/stack_smash.dir/main.cpp.o -o bin/stack_smash 

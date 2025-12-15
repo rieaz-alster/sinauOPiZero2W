@@ -1,0 +1,7 @@
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/stack_smash.dir
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/edit_cache.dir
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/rebuild_cache.dir
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/list_install_components.dir
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/install.dir
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/install/local.dir
+/media/rieaz/Data/git/sinauOPiZero2W/02StackSmashing/build/CMakeFiles/install/strip.dir
